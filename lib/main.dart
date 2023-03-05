@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         // When navigating to the "/" route, build the FirstScreen widget.
           // When navigating to the "/second" route, build the SecondScreen widget.
         '/home': (context) => HomePage(),
-        '/project':(context) => ProjectTaskView(),
+        '/project':(context) => ProjectView(),
         "/chat":(context) => ChatView(),
         "/drive":(context)=> Driveview(),
         "/track":(context) => TrackView()

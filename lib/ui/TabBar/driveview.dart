@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-class Driveview
- extends StatelessWidget {
-  const Driveview
-  ({super.key});
+// As the Ui for Chat is not desccribed so only  appbar is shown not to crash the app 
+
+class Driveview extends StatelessWidget {
+  const Driveview({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("this is drive"),
+      ),
+    );
   }
 }

@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
         ),
       ),
       body: TabBarView(children: [
-         ProjectTaskView(),
+         ProjectView(),
         ChatView(),
         Driveview(),
        TrackView(),

@@ -21,7 +21,7 @@ class _BottomNavigationState extends State<BottomNavigation>
   final Screens = [
     HomePage(),
     SearchPage(),
-    EmailPage(),
+    FakeEmailNotificationUI(),
     NotificationsPage(),
     ProfilePage(),
   ];

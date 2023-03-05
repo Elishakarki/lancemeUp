@@ -40,6 +40,7 @@ dependencies:
   intro_slider: ^4.2.0
   introduction_slider: ^2.0.1
   google_fonts: 
+  
 flutter_native_splash:
   image: assets/LANCEME Up.png
   background_image: assets/LANCEME Up.png
@@ -74,6 +75,10 @@ flutter:
     - assets/img.png
     - assets/lego.png
     - assets/globe.png
+    - assets/man.png
+    - assets/obama.png
+    - assets/santa.png
+    - assets/harry.png
 
   #   - images/a_dot_ham.jpeg
 
