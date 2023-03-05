@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:intro_slider/intro_slider.dart';
+import 'package:random/ui/Homepage/BottomNav.dart';
+import 'package:random/ui/Homepage/Homepage.dart';
+import 'package:random/ui/TabBar/chatView.dart';
+import 'package:random/ui/TabBar/driveview.dart';
+import 'package:random/ui/TabBar/projectView.dart';
+import 'package:random/ui/TabBar/trackview.dart';
+import 'package:random/ui/introslider.dart';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:random/ui/nextslider.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -11,62 +22,79 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+
+      home: SplashScreen(),
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+          // When navigating to the "/second" route, build the SecondScreen widget.
+        '/home': (context) => HomePage(),
+        '/project':(context) => ProjectTaskView(),
+        "/chat":(context) => ChatView(),
+        "/drive":(context)=> Driveview(),
+        "/track":(context) => TrackView()
+      },
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: IntroScreenDefault(),
+     
+      textTheme:  TextTheme(
+         bodyText1: TextStyle(color: Colors.black),
+          bodyText2: TextStyle(color: Colors.black),
+          headline1: TextStyle(color: Colors.black),
+          headline2: TextStyle(color: Colors.black),
+          headline3: TextStyle(color: Colors.black),
+          headline4: TextStyle(color: Colors.black),
+          headline5: TextStyle(color: Colors.black),
+          headline6: TextStyle(color: Colors.black),
+          subtitle1: TextStyle(color: Colors.black),
+          subtitle2: TextStyle(color: Colors.black),
+          button: TextStyle(color: Colors.black),
+          caption: TextStyle(color: Colors.black),
+          overline: TextStyle(color: Colors.black),
+        ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedItemColor: Color.fromRGBO(0, 0, 0, 0.87),
+      unselectedItemColor: Color.fromRGBO(0, 0, 0, 0.60),
+    ),
+  ),
     );
   }
 }
 
-class IntroScreenDefault extends StatefulWidget {
-  const IntroScreenDefault({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({
+    super.key,
+  });
 
   @override
-  State<IntroScreenDefault> createState() => _IntroScreenDefaultState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _IntroScreenDefaultState extends State<IntroScreenDefault> {
-  List<ContentConfig> listContentConfig = [];
-
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    initialization();
+  }
 
-    listContentConfig.add(
-      const ContentConfig(
-        title: "ERASER",
-        description:
-            "Allow miles wound place the leave had. To sitting subject no improve studied limited",
-        pathImage: "images/photo_eraser.png",
-        backgroundColor: Color(0xfff5a623),
-      ),
-    );
-    listContentConfig.add(
-      const ContentConfig(
-        title: "PENCIL",
-        description:
-            "Ye indulgence unreserved connection alteration appearance",
-        pathImage: "images/photo_pencil.png",
-        backgroundColor: Color(0xff203152),
-      ),
-    );
-    listContentConfig.add(
-      const ContentConfig(
-        title: "RULER",
-        description:
-            "Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our. Although finished blessing do of",
-        pathImage: "images/photo_ruler.png",
-        backgroundColor: Color(0xff9932CC),
-      ),
-    );
+  void initialization() async {
+    await Future.delayed(const Duration(seconds: 2));
+    print('go!');
+    FlutterNativeSplash.remove(); //Removing  the splashScreen after 2 Seconds
   }
 
   @override
   Widget build(BuildContext context) {
-    return ;
+    return Scaffold(
+      body: DefaultTabController(
+        length: 4,
+        child:
+         BottomNavigation()),
+      // body: NextSlider(),
+    );
   }
 }

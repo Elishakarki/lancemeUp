@@ -38,6 +38,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.2.18
   intro_slider: ^4.2.0
+  introduction_slider: ^2.0.1
+  google_fonts: 
 flutter_native_splash:
   image: assets/LANCEME Up.png
   background_image: assets/LANCEME Up.png
@@ -68,8 +70,11 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/img.png
+    - assets/lego.png
+    - assets/globe.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
