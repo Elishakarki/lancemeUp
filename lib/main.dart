@@ -39,6 +39,8 @@ class MyApp extends StatelessWidget {
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+       primarySwatch:Colors.green,
+        primaryColor: Colors.black,
      
       textTheme:  TextTheme(
          bodyText1: TextStyle(color: Colors.black),

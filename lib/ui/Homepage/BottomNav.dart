@@ -22,7 +22,7 @@ class _BottomNavigationState extends State<BottomNavigation>
     HomePage(),
     SearchPage(),
     FakeEmailNotificationUI(),
-    NotificationsPage(),
+     MyNotificationsScreen(),
     ProfilePage(),
   ];
  
